@@ -1,0 +1,30 @@
+export const SERVICE_STATUS_NORMAL = 1;
+export const SERVICE_STATUS_FAIL = 2;
+
+export interface Base {
+  id: number;
+  name: string;
+}
+export interface Service {
+  id: number;
+  name: string;
+  serviceStatus: Base;
+}
+export interface Customer {
+  id: number;
+  firstName: string;
+  lastName: string;
+}
+export interface Equipment extends Base {
+  serial: string;
+  hardwareStatus: Base;
+}
+
+export interface Items {
+  services: Service[];
+  customers: Customer[];
+  hardwares: Equipment[];
+}
+export interface SearchResults {
+  _embedded: Items;
+}
