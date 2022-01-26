@@ -28,10 +28,13 @@ export const EquipmentBlock = ({
     );
   });
 
+  const setHardwareStatus = (hardwareId: number, hardwareStatusId: number) => {
+    setEquipmentStatus(hardwareId, hardwareStatusId).then(
+    window.location.reload);
+  };
+
   return (
     <div>
-      <h1>Hardware to fix</h1>
-
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <BallTriangle
           color="#00BFFF"
@@ -44,7 +47,7 @@ export const EquipmentBlock = ({
       <div hidden={!isLoaded}>
         {sectionTitle}: {items?.hardwares.length}
         {items?.hardwares.map((hardware: Equipment) =>
-          HardwareRow(hardware, setEquipmentStatus)
+          HardwareRow(hardware, setHardwareStatus)
         )}
       </div>
 

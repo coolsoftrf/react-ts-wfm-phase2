@@ -4,7 +4,7 @@ import {
   HARDWARE_STATUS_FAIL,
   HARDWARE_STATUS_NORMAL,
   HARDWARE_STATUS_TO_REPLACE,
-  HARDWARE_STATUS_UNDER_MAINTENAMCE,
+  HARDWARE_STATUS_UNDER_MAINTENANCE,
 } from './entities';
 
 export default (
@@ -14,11 +14,11 @@ export default (
   <div>
     {hardware.name} {hardware.serial}
     {hardware.hardwareStatus.id == HARDWARE_STATUS_FAIL && (
-      <button onClick={() => clickHandler(hardware.id, HARDWARE_STATUS_UNDER_MAINTENAMCE)}>
+      <button onClick={() => clickHandler(hardware.id, HARDWARE_STATUS_UNDER_MAINTENANCE)}>
         Start Maintenance
       </button>
     )}
-    {hardware.hardwareStatus.id == HARDWARE_STATUS_UNDER_MAINTENAMCE && (
+    {hardware.hardwareStatus.id == HARDWARE_STATUS_UNDER_MAINTENANCE && (
       <div>
         <button onClick={() => clickHandler(hardware.id, HARDWARE_STATUS_NORMAL)}>
           Fixed

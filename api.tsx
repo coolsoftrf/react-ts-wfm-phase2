@@ -1,4 +1,4 @@
-import { HARDWARE_STATUS_UNDER_MAINTENAMCE, SearchResults } from './entities';
+import { HARDWARE_STATUS_UNDER_MAINTENANCE, SearchResults } from './entities';
 
 const STAGING = 'https://nnsu-nc-data-app.herokuapp.com';
 const PROD = 'https://ntl-nc-data-app.herokuapp.com';
@@ -24,7 +24,7 @@ export const findEquipmentToReplaceByCustomer = (customerId: number) =>
   );
 export const findEquipmentUnderMaintenanceByCustomer = (customerId: number) =>
   doFetch(
-    `${HOST}/hardwares/search/findAllByCustomer_IdAndHardwareStatus_Id?customerId=${customerId}&hardwareStatusId=${HARDWARE_STATUS_UNDER_MAINTENAMCE}`
+    `${HOST}/hardwares/search/findAllByCustomer_IdAndHardwareStatus_Id?customerId=${customerId}&hardwareStatusId=${HARDWARE_STATUS_UNDER_MAINTENANCE}`
   );
 export const findEquipmentByCustomerAndStatus = (
   customerId: number,
@@ -39,5 +39,5 @@ export const setEquipmentStatus = (
   hardwareStatusId: number
 ) =>
   doFetch(
-    `${HOST}/hardwares/setHardwareStatusByHardware_Id?hardwareId=${hardwareId}&hardwareStatusId=${hardwareStatusId}`
+    `${HOST}/hardwares/search/setHardwareStatusByHardware_Id?hardwareId=${hardwareId}&hardwareStatusId=${hardwareStatusId}`
   );
