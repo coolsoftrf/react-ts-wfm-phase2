@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SERVICE_STATUS_FAIL } from './entities';
+import { Items, SERVICE_STATUS_FAIL } from './entities';
 import './style.css';
 import { Watch } from 'react-loader-spinner';
 import { findCustomersByServiceStatus } from './api';
@@ -7,7 +7,7 @@ import CustomerRow from './CustomerRow';
 
 export const Main = () => {
   const [isLoaded, setLoaded] = useState(false);
-  const [items, setItems] = useState();
+  const [items, setItems] = useState<Items>();
   const [error, setError] = useState();
 
   useEffect(() => {

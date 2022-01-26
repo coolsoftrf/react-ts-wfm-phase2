@@ -4,17 +4,17 @@ import { BallTriangle } from 'react-loader-spinner';
 import { findFaultyEquipmentByCustomer } from './api';
 import HardwareRow from './HardwareRow';
 import { useParams } from 'react-router-dom';
-import { Equipment } from './entities';
+import { Equipment, Items } from './entities';
 
 export const EquipmentPage = () => {
   const [isLoaded, setLoaded] = useState(false);
-  const [items, setItems] = useState();
+  const [items, setItems] = useState<Items>();
   const [error, setError] = useState();
 
-  // const { hwid } = useParams();
+  const { hwid } = useParams();
 
   useEffect(() => {
-    findFaultyEquipmentByCustomer(/**/ 1   /*/ hwid /**/).then(
+    findFaultyEquipmentByCustomer(hwid).then(
       (result) => {
         setLoaded(true);
         setItems(result._embedded);
