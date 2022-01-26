@@ -1,6 +1,11 @@
 export const SERVICE_STATUS_NORMAL = 1;
 export const SERVICE_STATUS_FAIL = 2;
 
+export const HARDWARE_STATUS_NORMAL = 1;
+export const HARDWARE_STATUS_FAIL = 2;
+export const HARDWARE_STATUS_UNDER_MAINT = 3;
+export const HARDWARE_STATUS_TO_REPLACE = 4;
+
 export interface Base {
   id: number;
   name: string;

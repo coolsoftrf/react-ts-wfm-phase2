@@ -8,6 +8,6 @@ export const EQUIPMENT = 'equipment';
 export const AppRouter = () => (
   <BrowserRouter>
     <Route exact path="/" component={Main} />
-    <Route path={`/${EQUIPMENT}/:hwid`} component={EquipmentPage} />
+    <Route path={`/${EQUIPMENT}/:customerId`} component={EquipmentPage} />
   </BrowserRouter>
 );
