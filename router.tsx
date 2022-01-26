@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { Equipment } from './equipment';
-import { App } from './index';
+import { EquipmentPage } from './EquipmentPage';
+import { Main } from './MainPage';
 
 export const EQUIPMENT = 'equipment';
 
 export const AppRouter = () => (
   <BrowserRouter>
-    <Route exact path="/" component={App} />
-    <Route path={`/${EQUIPMENT}/:hwid`} component={Equipment} />
+    <Route exact path="/" component={Main} />
+    <Route path={`/${EQUIPMENT}/:hwid`} component={EquipmentPage} />
   </BrowserRouter>
 );
