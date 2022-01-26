@@ -24,7 +24,7 @@ export const Main = () => {
         setError(error);
       }
     );
-  });
+  }, []);
 
   return (
     <div>

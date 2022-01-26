@@ -26,11 +26,12 @@ export const EquipmentBlock = ({
         setError(error);
       }
     );
-  });
+  }, []);
 
   const setHardwareStatus = (hardwareId: number, hardwareStatusId: number) => {
-    setEquipmentStatus(hardwareId, hardwareStatusId).then(
-    window.location.reload);
+    setEquipmentStatus(hardwareId, hardwareStatusId).then(() =>
+      window.location.reload()
+    );
   };
 
   return (

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './style.css';
 import { useParams } from 'react-router-dom';
-import { HARDWARE_STATUS_FAIL, HARDWARE_STATUS_TO_REPLACE, HARDWARE_STATUS_UNDER_MAINTENANCE, Items } from './entities';
+import { HARDWARE_STATUS_FAIL, HARDWARE_STATUS_TO_REPLACE, HARDWARE_STATUS_UNDER_MAINTENANCE } from './entities';
 import { EquipmentBlock } from './EquipmentBlock';
 
 export const EquipmentPage = () => {
