@@ -47,9 +47,9 @@ export const EquipmentBlock = ({
 
       <div hidden={!isLoaded}>
         {sectionTitle}: {items?.hardwares.length}
-        {items?.hardwares.map((hardware: Equipment) =>
-          HardwareRow(hardware, setHardwareStatus)
-        )}
+        {items?.hardwares.map((hardware: Equipment) => (
+          <HardwareRow hardware={hardware} clickHandler={setHardwareStatus} />
+        ))}
       </div>
 
       <div hidden={!error} style={{ color: 'red' }}>

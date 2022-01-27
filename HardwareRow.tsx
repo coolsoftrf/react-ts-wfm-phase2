@@ -10,11 +10,11 @@ import NinePatch from 'react-9patch';
 import { getEquipmentAddress } from './api';
 import { ThreeDots } from 'react-loader-spinner';
 
-export default (
-  hardware: Equipment,
-  clickHandler?: (hwId: number, statusId: number) => void
-) => {
-  /**
+export default ({
+  hardware/*: Equipment*/,
+  clickHandler/*?: (hwId: number, statusId: number) => void*/
+}) => {
+  /**/
   const [isLoaded, setLoaded] = useState(false);
   const [address, setAddress] = useState('');
   const [error, setError] = useState<any>();
