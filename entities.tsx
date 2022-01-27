@@ -33,3 +33,8 @@ export interface Items {
 export interface SearchResults {
   _embedded: Items;
 }
+
+export interface Address {
+  id: number;
+  fullAddress: string;
+}

@@ -1,4 +1,8 @@
-import { HARDWARE_STATUS_UNDER_MAINTENANCE, SearchResults } from './entities';
+import {
+  Address,
+  HARDWARE_STATUS_UNDER_MAINTENANCE,
+  SearchResults,
+} from './entities';
 
 const STAGING = 'https://nnsu-nc-data-app.herokuapp.com';
 const PROD = 'https://ntl-nc-data-app.herokuapp.com';
@@ -33,8 +37,10 @@ export const findEquipmentByCustomerAndStatus = (
   doFetch(
     `${HOST}/hardwares/search/findAllByCustomer_IdAndHardwareStatus_Id?customerId=${customerId}&hardwareStatusId=${hardwareStatusId}`
   );
-export const getEquipmentAddress = (hardwareId: number) =>
-  doFetch(`${HOST}/hardwares/${hardwareId}/address`);
+export const getEquipmentAddress = (hardwareId: number): Promise<Address> =>
+  fetch(`${HOST}/hardwares/${hardwareId}/address`).then((result) =>
+    result.json()
+  );
 
 export const setEquipmentStatus = (
   hardwareId: number,
