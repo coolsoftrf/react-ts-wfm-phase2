@@ -7,6 +7,7 @@
     "@types/react-dom": "^16.8.0",
     "fetch": "^1.1.0",
     "react": "^16.8.0",
+    "react-9patch": "^0.0.1",
     "react-dom": "^16.8.0",
     "react-loader-spinner": "^5.1.0",
     "react-router": "^5.0.0",

@@ -33,6 +33,8 @@ export const findEquipmentByCustomerAndStatus = (
   doFetch(
     `${HOST}/hardwares/search/findAllByCustomer_IdAndHardwareStatus_Id?customerId=${customerId}&hardwareStatusId=${hardwareStatusId}`
   );
+export const getEquipmentAddress = (hardwareId: number) =>
+  doFetch(`${HOST}/hardwares/${hardwareId}/address`);
 
 export const setEquipmentStatus = (
   hardwareId: number,
