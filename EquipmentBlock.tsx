@@ -15,29 +15,21 @@ export default ({
   hardwareStatusId,
   sectionTitle,
 }: EquipmentBlockType) => {
-  const [isLoaded, setLoaded] = useState(false);
-  const [items, setItems] = useState<Items>();
-  const [error, setError] = useState<any>();
-  useEffect(() => {
-    findEquipmentByCustomerAndStatus(customerId, hardwareStatusId).then(
-      (result) => {
-        setLoaded(true);
-        setItems(result._embedded);
+  const [isLoaded, setLoaded] = useState(true);
+  const [items, setItems] = useState<Items>({
+    hardwares: [
+      {
+        id: 0,
+        name: 'железка',
+        serial: 'серийник',
+        hardwareStatus: { id: 0, name: '' },
       },
-      // Note: it's important to handle errors here
-      // instead of a catch() block so that we don't swallow
-      // exceptions from actual bugs in components.
-      (error) => {
-        setLoaded(true);
-        setError(error);
-      }
-    );
-  }, []);
+    ],
+  });
+  const [error, setError] = useState<any>();
 
   const setHardwareStatus = (hardwareId: number, hardwareStatusId: number) => {
-    setEquipmentStatus(hardwareId, hardwareStatusId).then(() =>
-      window.location.reload()
-    );
+    setEquipmentStatus(hardwareId, hardwareStatusId);
   };
 
   return (

@@ -26,9 +26,9 @@ export interface Equipment extends Base {
 }
 
 export interface Items {
-  services: Service[];
-  customers: Customer[];
-  hardwares: Equipment[];
+  services?: Service[];
+  customers?: Customer[];
+  hardwares?: Equipment[];
 }
 export interface SearchResults {
   _embedded: Items;

@@ -26,12 +26,6 @@ export default () => {
         hardwareStatusId={HARDWARE_STATUS_UNDER_MAINTENANCE}
         sectionTitle="Hardware under maintenance"
       />
-      <br />
-      <EquipmentBlock
-        customerId={customerId}
-        hardwareStatusId={HARDWARE_STATUS_TO_REPLACE}
-        sectionTitle="Hardware to replace"
-      />
     </div>
   );
 };
