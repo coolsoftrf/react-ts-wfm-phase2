@@ -4,11 +4,17 @@ import { findEquipmentByCustomerAndStatus, setEquipmentStatus } from './api';
 import { Equipment, Items } from './entities';
 import HardwareRow from './HardwareRow';
 
-export const EquipmentBlock = ({
+type EquipmentBlockType = {
+  customerId: number;
+  hardwareStatusId: number;
+  sectionTitle: string;
+};
+
+export default ({
   customerId,
   hardwareStatusId,
   sectionTitle,
-}) => {
+}: EquipmentBlockType) => {
   const [isLoaded, setLoaded] = useState(false);
   const [items, setItems] = useState<Items>();
   const [error, setError] = useState<any>();
@@ -47,9 +53,9 @@ export const EquipmentBlock = ({
 
       <div hidden={!isLoaded}>
         {sectionTitle}: {items?.hardwares.length}
-        {items?.hardwares.map((hardware: Equipment) =>
-          HardwareRow(hardware, setHardwareStatus)
-        )}
+        {items?.hardwares.map((hardware: Equipment) => (
+          <HardwareRow hardware={hardware} clickHandler={setHardwareStatus} />
+        ))}
       </div>
 
       <div hidden={!error} style={{ color: 'red' }}>
