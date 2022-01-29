@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { BallTriangle } from 'react-loader-spinner';
 import { findEquipmentByCustomerAndStatus, setEquipmentStatus } from './api';
-import { Equipment, Items } from './entities';
+import {
+  Equipment,
+  HARDWARE_STATUS_UNDER_MAINTENANCE,
+  Items,
+} from './entities';
 import HardwareRow from './HardwareRow';
 
 type EquipmentBlockType = {
@@ -22,7 +26,10 @@ export default ({
         id: 0,
         name: 'железка',
         serial: 'серийник',
-        hardwareStatus: { id: 0, name: '' },
+        hardwareStatus: {
+          id: HARDWARE_STATUS_UNDER_MAINTENANCE,
+          name: 'в обработке',
+        },
       },
     ],
   });

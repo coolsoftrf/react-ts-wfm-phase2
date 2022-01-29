@@ -1,6 +1,6 @@
 {
-  "name": "react-ts",
-  "version": "0.0.0",
+  "name": "react-ts-wfm",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@types/react": "^16.8.2",

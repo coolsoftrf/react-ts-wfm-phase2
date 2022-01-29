@@ -28,7 +28,7 @@ const HardwareRow = ({
       x={[0.53, 0.57]}
       y={[0.49, 0.51]}
       img={
-        'https://github.com/coolsoftrf/react-ts-wfm-phase2/blob/master/frame.png?raw=true'
+        'https://stackblitz.com/files/react-ts-wfm/github/coolsoftrf/react-ts-wfm-phase2/master/frame_thinner.png'
       }
       contentX={[0.2, 0.8]}
       contentY={[0.4, 0.6]}
