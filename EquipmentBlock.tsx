@@ -4,11 +4,17 @@ import { findEquipmentByCustomerAndStatus, setEquipmentStatus } from './api';
 import { Equipment, Items } from './entities';
 import HardwareRow from './HardwareRow';
 
-export const EquipmentBlock = ({
+type EquipmentBlockType = {
+  customerId: number;
+  hardwareStatusId: number;
+  sectionTitle: string;
+};
+
+export default ({
   customerId,
   hardwareStatusId,
   sectionTitle,
-}) => {
+}: EquipmentBlockType) => {
   const [isLoaded, setLoaded] = useState(false);
   const [items, setItems] = useState<Items>();
   const [error, setError] = useState<any>();

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import {
   Equipment,
   HARDWARE_STATUS_FAIL,
@@ -10,11 +10,15 @@ import NinePatch from 'react-9patch';
 import { getEquipmentAddress } from './api';
 import { ThreeDots } from 'react-loader-spinner';
 
-export default ({
-  hardware/*: Equipment*/,
-  clickHandler/*?: (hwId: number, statusId: number) => void*/
-}) => {
-  /**/
+type HardwareRowProps = {
+  hardware: Equipment;
+  clickHandler?: (hwId: number, statusId: number) => void;
+};
+
+const HardwareRow = ({
+  hardware,
+  clickHandler,
+}: HardwareRowProps): ReactElement => {
   const [isLoaded, setLoaded] = useState(false);
   const [address, setAddress] = useState('');
   const [error, setError] = useState<any>();
@@ -35,20 +39,16 @@ export default ({
       }
     );
   }, []);
-/*/
-  const isLoaded = false;
-  const address = '';
-  /**/
 
   return (
     <NinePatch
       x={[0.53, 0.57]}
       y={[0.49, 0.51]}
       img={
-        'https://github.com/coolsoftrf/react-ts-wfm-phase2/blob/look-n-feel/frame_thin.png?raw=true'
+        'https://github.com/coolsoftrf/react-ts-wfm-phase2/blob/look-n-feel/frame_thinner.png?raw=true'
       }
       contentX={[0.2, 0.8]}
-      contentY={[0.3, 0.7]}
+      contentY={[0.4, 0.6]}
     >
       <div key={hardware.id}>
         {hardware.name}
@@ -88,3 +88,5 @@ export default ({
     </NinePatch>
   );
 };
+
+export default HardwareRow;

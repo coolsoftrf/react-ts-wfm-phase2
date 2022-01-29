@@ -5,7 +5,7 @@ import { Watch } from 'react-loader-spinner';
 import { findCustomersByServiceStatus } from './api';
 import CustomerRow from './CustomerRow';
 
-export const Main = () => {
+export default () => {
   const [isLoaded, setLoaded] = useState(false);
   const [items, setItems] = useState<Items>();
   const [error, setError] = useState();
@@ -36,7 +36,7 @@ export const Main = () => {
 
       <div hidden={!isLoaded}>
         Faulty customers found: {items?.customers.length}
-        {items?.customers.map((customer) => CustomerRow(customer))}
+        {items?.customers.map((customer) => <CustomerRow customer={customer}/>)}
       </div>
 
       <div hidden={!error} style={{ color: 'red' }}>
